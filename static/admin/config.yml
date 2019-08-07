@@ -12,9 +12,57 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
-     preview: false
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "authors"
+    label: "Authors"
+    folder: "content/authors"
+    create: true
+    slug: "{{first}}-{{last}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          description: "Required field. Ex: Ryan's author page",
+        }
+      - { label: "First name", name: "first", widget: "string" }
+      - { label: "Last name", name: "last", widget: "string" }
+      - {
+          label: "About",
+          name: "about",
+          widget: "string",
+          description: "About the author",
+        }
+  - name: "reviews"
+    label: "reviews"
+    folder: "content/reviews"
+    create: true
+    slug: "{{title}}-{{author}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Review Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          searchFields: ["first", "last"],
+          valueField: "first",
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Cover Image",
+          name: "image",
+          required: false,
+          widget: "image",
+        }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
