@@ -22,7 +22,7 @@ collections:
     label: "Authors"
     folder: "content/authors"
     create: true
-    slug: "{{first}}-{{last}}-{{slug}}"
+    slug: "{{first}}-{{last}}-author-page"
     editor:
       preview: false
     fields:
@@ -41,10 +41,10 @@ collections:
           description: "About the author",
         }
   - name: "reviews"
-    label: "reviews"
+    label: "Reviews"
     folder: "content/reviews"
     create: true
-    slug: "{{title}}-{{author}}-{{slug}}"
+    slug: "{{title}}-{{author}}"
     editor:
       preview: false
     fields:
