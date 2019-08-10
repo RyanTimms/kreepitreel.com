@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
+    title: `KreepItReel.com`,
+    author: `Ryan Timms`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://kreepitreel.netlify.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ryan_timms_92`,
     },
   },
   plugins: [
