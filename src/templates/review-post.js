@@ -26,19 +26,14 @@ class ReviewPostTemplate extends Component {
 export default ReviewPostTemplate
 
 export const pageQuery = graphql`
-  query ReviewPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query ReviewPage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
       html
       frontmatter {
         title
+        type
         author
         date(formatString: "MMMM DD, YYYY")
         description
