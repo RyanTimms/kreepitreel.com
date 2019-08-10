@@ -15,6 +15,7 @@ collections:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "blog" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -22,7 +23,7 @@ collections:
     label: "Authors"
     folder: "content/authors"
     create: true
-    slug: "{{first}}-{{last}}-author-page"
+    slug: "{{slug}}"
     editor:
       preview: false
     fields:
@@ -42,13 +43,14 @@ collections:
         }
   - name: "reviews"
     label: "Reviews"
-    folder: "content/reviews"
+    folder: "content/reviews/{{year}}"
     create: true
-    slug: "{{title}}-{{author}}"
+    slug: "{{title}}-{{author}}-{{slug}}"
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "review" }
       - {
           label: "Review Author",
           name: "author",
